@@ -4,54 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Research — Cosmo Codex Ltd Privacy-Enhancing Technologies</title>
-    <meta name="description" content="Research essays from Cosmo Codex Ltd on differential privacy, agent memory, and applied PETs — pre-registered where applicable." />
+    <meta name="description" content="Cosmo Codex Research essays. Currently withdrawn pending vendor notification and ethics-review fixes." />
+    <meta name="robots" content="noindex" />
     <style>
-      :root {
-        --bg: #fafaf7; --bg-card: #ffffff; --text: #1f1f1f; --text-muted: #555;
-        --text-faint: #888; --border: #e8e6df; --link: #2b5d8c; --link-hover: #1a3a5c;
-        --accent: #b35a3a; --max-width: 720px;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg: #161614; --bg-card: #1d1d1b; --text: #e8e6df; --text-muted: #b5b3ab;
-          --text-faint: #888579; --border: #2e2d29; --link: #7ab2e6; --link-hover: #a5cdf0;
-          --accent: #e0936f;
-        }
-      }
-      * { box-sizing: border-box; }
+      :root { --bg: #fafaf7; --text: #1f1f1f; --text-muted: #555; --border: #e8e6df; --link: #2b5d8c; --accent: #b35a3a; --max-width: 720px; }
+      @media (prefers-color-scheme: dark) { :root { --bg: #161614; --text: #e8e6df; --text-muted: #b5b3ab; --border: #2e2d29; --link: #7ab2e6; --accent: #e0936f; } }
       body { margin: 0; padding: 0; background: var(--bg); color: var(--text);
-        font-family: "Charter", "Iowan Old Style", "Source Serif Pro", Cambria, Georgia, serif;
+        font-family: "Charter", "Iowan Old Style", Cambria, Georgia, serif;
         font-size: 19px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
       .container { max-width: var(--max-width); margin: 0 auto; padding: 4rem 1.5rem 6rem; }
       .eyebrow { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
         font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
         color: var(--accent); margin-bottom: 1rem; }
       .eyebrow a { color: var(--accent); text-decoration: none; }
-      h1 { font-size: 2.1rem; font-weight: 700; line-height: 1.2; margin: 0 0 1.25rem 0;
-        letter-spacing: -0.015em; }
-      .lede { font-size: 1.05rem; color: var(--text-muted); margin: 0 0 3rem; }
-      .pub-list { list-style: none; padding: 0; margin: 0; }
-      .pub-list li { background: var(--bg-card); border: 1px solid var(--border);
-        border-radius: 6px; padding: 1.5rem 1.75rem; margin-bottom: 1.25rem; }
-      .pub-topic { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-        font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
-        color: var(--accent); margin-bottom: 0.5rem; }
-      .pub-title { font-size: 1.25rem; font-weight: 700; margin: 0 0 0.65rem; line-height: 1.3; }
-      .pub-title a { color: var(--text); text-decoration: none; border-bottom: 2px solid var(--accent); }
-      .pub-title a:hover { color: var(--accent); }
-      .pub-blurb { font-size: 0.95rem; color: var(--text-muted); margin: 0 0 0.75rem; }
-      .pub-meta { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-        font-size: 0.78rem; color: var(--text-faint); margin: 0; }
-      .pub-meta span + span::before { content: " · "; margin: 0 0.4rem; }
-      .pub-status { display: inline-block; padding: 0.15rem 0.45rem; border-radius: 3px;
-        background: var(--accent); color: white; font-size: 0.7rem; font-weight: 600;
-        letter-spacing: 0.04em; text-transform: uppercase; margin-left: 0.6rem; vertical-align: middle; }
-      .pub-resources { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-        font-size: 0.85rem; color: var(--text-muted); margin: 0.75rem 0 0; }
-      .pub-resources a { color: var(--link); }
+      h1 { font-size: 2rem; font-weight: 700; line-height: 1.2; margin: 0 0 1.5rem 0; }
+      .notice { background: var(--bg); border-left: 4px solid var(--accent); padding: 1.5rem; margin: 2rem 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; font-size: 0.95rem; }
+      .notice strong { display: block; margin-bottom: 0.5rem; }
       footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border);
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-        font-size: 0.85rem; color: var(--text-faint); }
+        font-size: 0.85rem; color: var(--text-muted); }
       footer a { color: var(--link); text-decoration: none; }
     </style>
   </head>
@@ -61,48 +33,26 @@
         <a href="https://github.com/CosmoCodexLtd/privacy-enhancing-technologies">↩ Privacy-Enhancing Technologies</a> ·
         <a href="https://cosmocodex.com">Cosmo Codex Ltd</a>
       </div>
-      <h1>Research</h1>
-      <p class="lede">
-        Applied research from Cosmo Codex Ltd on differential privacy, agent memory,
-        and the gap between what privacy-enhancing technologies defend and what
-        modern AI products actually leak. Pre-registered where applicable.
-      </p>
 
-      <ul class="pub-list">
-        <li>
-          <div class="pub-topic">AI Privacy · Differential Privacy · Pre-Registered<span class="pub-status">Draft</span></div>
-          <h2 class="pub-title">
-            <a href="dp-for-ai-agents-missing-primitive.html">What AI Agent Memory Actually Leaks (And What It Doesn't)</a>
-          </h2>
-          <p class="pub-blurb">
-            A pre-registered toy validation against Mem0 v2.0.2 produces four findings:
-            Mem0's LLM fact-extractor defeats input-level perturbation by reconstructing
-            shuffled tokens at storage time; conditional-fact prompt-injection persists
-            at a 67% leak rate; third-party-voice probes elicit clinical labels never
-            stored; cross-user filter holds within budget. Two rounds of three
-            independent adversarial reviewers narrowed the headline.
-          </p>
-          <p class="pub-meta">
-            <span>25 May 2026</span><span>13 min read</span><span>~3,000 words</span>
-          </p>
-          <p class="pub-resources">
-            <a href="dp-for-ai-agents-missing-primitive.md">Source markdown</a> ·
-            <a href="dp-for-ai-agents-pre-registration.md">Pre-registered position artefact</a> ·
-            <a href="https://github.com/CosmoCodexLtd/privacy-enhancing-technologies/tree/main/research">GitHub source</a>
-          </p>
-        </li>
-      </ul>
+      <h1>Research — temporarily withdrawn</h1>
+
+      <div class="notice">
+        <strong>Withdrawn 2026-05-25 pending vendor notification and ethics fixes.</strong>
+        A draft essay ("What AI Agent Memory Actually Leaks") was published from this URL earlier today. A subsequent paper-grade adversarial review identified three issues that require resolution before re-publication:
+        <ol>
+          <li>The empirical work demonstrates real attacks against a deployed product (Mem0). Coordinated vulnerability disclosure to the vendor was not completed before public release.</li>
+          <li>Some of the "fabricated" ground-truth facts (notably the postcode) inadvertently overlap with real-world identifiers.</li>
+          <li>The pre-registration's own commitment to external expert review before public publication was breached.</li>
+        </ol>
+        The essay will be re-published after (a) Mem0 has been privately notified through coordinated-disclosure channels, (b) the ground-truth facts have been substituted with verified-fictional values and the affected tests re-run, and (c) the three pre-registered expert pings (Damien Desfontaines / Anthropic Clio team / OpenDP maintainer) have had a chance to land.
+      </div>
+
+      <p>The underlying pre-registered position artefact (predictions immutable from <code>autoresearch</code> repo commit <code>f18dbac</code>; falsification horizon 2027-12-31) and the experiment code remain on record in the upstream <code>autoresearch</code> repository. They are not deleted; only the public-facing essay is withdrawn while the fixes land.</p>
+
+      <p>If you are from Mem0 (or any party with a stake in the underlying findings) and want to be notified privately as part of the coordinated disclosure, please contact Cosmo Codex Ltd via the channels on the <a href="https://cosmocodex.com">cosmocodex.com</a> contact page.</p>
 
       <footer>
-        <p>
-          Maintained by <a href="https://cosmocodex.com">Cosmo Codex Ltd</a>.
-          Research essays are draft / pre-registered where applicable; predictions
-          immutable from their git commit. See each essay's pre-registration block
-          for falsification horizons and addendum-publication commitments.
-        </p>
-        <p>
-          <a href="https://github.com/CosmoCodexLtd/privacy-enhancing-technologies">← PETs bibliography</a>
-        </p>
+        <p>Withdrawn 2026-05-25 · Cosmo Codex Ltd · <a href="https://github.com/CosmoCodexLtd/privacy-enhancing-technologies">PETs bibliography</a></p>
       </footer>
     </div>
   </body>

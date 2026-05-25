@@ -1,36 +1,18 @@
-# Research
+# Research — temporarily withdrawn
 
-Applied research from [Cosmo Codex Ltd](https://cosmocodex.com) on differential privacy, agent memory, and the gap between what privacy-enhancing technologies defend and what modern AI products actually leak. Pre-registered where applicable.
+**Withdrawn 2026-05-25 pending vendor notification and ethics fixes.**
 
-## Essays
+A draft essay ("What AI Agent Memory Actually Leaks") was published to this folder earlier today. A subsequent paper-grade adversarial review identified three issues that require resolution before re-publication:
 
-### [What AI Agent Memory Actually Leaks (And What It Doesn't)](dp-for-ai-agents-missing-primitive.html)
-*25 May 2026 · 13 min read · ~3,000 words · Status: DRAFT v4*
+1. The empirical work demonstrates real attacks against a deployed product (Mem0). Coordinated vulnerability disclosure to the vendor was not completed before public release.
+2. Some of the "fabricated" ground-truth facts (notably the postcode) inadvertently overlap with real-world identifiers.
+3. The pre-registration's own commitment to external expert review before public publication was breached.
 
-A pre-registered toy validation against [Mem0](https://mem0.ai) v2.0.2 produces four findings:
+The essay will be re-published after:
+- Mem0 has been privately notified through coordinated-disclosure channels (target: 30-90 day standard CVD window)
+- The ground-truth facts have been substituted with verified-fictional values and the affected tests re-run
+- The three pre-registered expert pings (Damien Desfontaines / Anthropic Clio team / OpenDP maintainer) have had a chance to land
 
-1. **Input-level perturbation does not defend against Mem0.** Mem0's LLM fact-extractor reconstructs coherent facts from token-shuffled input at storage time. Rules out an entire family of cheap defences.
-2. **Storage-time prompt-injection persists.** 10-payload sweep: 7/10 payloads survived Mem0's fact-extractor; 18/28 (64%) retrieval-leak rate conditional on storage. Conditional-fact phrasing is the strongest pattern (3/3 stored, 67% leak).
-3. **Inferred attributes leak at the LLM-response layer.** Third-party-voice probes elicit clinical / locational / financial labels at 33% cross-cluster — 50% in the mental-health cluster — from facts Mem0 stored without those labels.
-4. **Cross-user filter holds within budget.** 0/25 leakage including explicit cross-user prompt injection. Meaningful absence-of-cheap-attack, not proof of soundness.
+The underlying pre-registered position artefact (predictions immutable from `autoresearch` repo commit `f18dbac`; falsification horizon 2027-12-31) and the experiment code remain on record in the upstream `autoresearch` repository. They are not deleted; only the public-facing essay is withdrawn while the fixes land.
 
-Predictions locked at git commit `f18dbac`. Falsification horizon 2027-12-31. A "Results vs predictions" addendum will be published on or before that date regardless of outcome.
-
-Two convergent rounds of three independent adversarial reviewers (DP-domain critic, pre-registration auditor, threat-model security researcher) cleared v4 for publication subject to external expert pings.
-
-**Resources**
-- [Essay (HTML)](dp-for-ai-agents-missing-primitive.html)
-- [Essay (markdown source)](dp-for-ai-agents-missing-primitive.md)
-- [Pre-registered position artefact](dp-for-ai-agents-pre-registration.md) — the four falsifiable predictions and methodology
-
-## About the research line
-
-Cosmo Codex Ltd's research arm publishes intellectually serious, restrained, footnoted essays on AI, consciousness, AI-for-science, and methodology. Not affiliated with any AI lab; not selling any AI model.
-
-Pre-registration discipline: predictions are committed to a git hash before any measurement. Results are appended in dated sections, never edited into the original prediction text. Adversarial review is run before any public publication.
-
-The canonical research index is at [cosmocodex.com/research](https://cosmocodex.com/research) (forthcoming). Until then, this folder is the public mirror for PET-relevant essays.
-
-## License
-
-Essays are licensed under the same terms as this repository (see [LICENSE](../LICENSE)).
+If you are from Mem0 (or any party with a stake in the underlying findings) and want to be notified privately as part of the coordinated disclosure, please contact Cosmo Codex Ltd via the channels on the [cosmocodex.com](https://cosmocodex.com) contact page.
